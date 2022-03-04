@@ -50,7 +50,7 @@ public class ServerServiceImpl implements ServerService {
 
     @Override
     public Server get(Long id) {
-        log.info("Trayendo los servidores por Id {}, id");
+        log.info("Trayendo los servidores por Ids {}, id");
         return serverRepo.findById(id).get();
     }
 
