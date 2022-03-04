@@ -6,8 +6,6 @@ import com.example.backendRegEv.repo.ServerRepo;
 import com.example.backendRegEv.service.ServerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -53,8 +51,7 @@ public class ServerServiceImpl implements ServerService {
     @Override
     public Server get(Long id) {
         log.info("Trayendo los servidores por Id {}, id");
-        return serverRepo.getById(id).get();
-
+        return serverRepo.findById(id).get();
     }
 
     @Override
@@ -65,7 +62,6 @@ public class ServerServiceImpl implements ServerService {
 
     @Override
     public Boolean delete(Long id) {
-
         log.info("Deleting server by ID: {}", id);
         serverRepo.deleteById(id);
         return TRUE;
