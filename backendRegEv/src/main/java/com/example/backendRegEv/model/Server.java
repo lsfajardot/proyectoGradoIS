@@ -1,7 +1,6 @@
 package com.example.backendRegEv.model;
 
 import com.example.backendRegEv.enumaration.Status;
-import jdk.jshell.Snippet;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

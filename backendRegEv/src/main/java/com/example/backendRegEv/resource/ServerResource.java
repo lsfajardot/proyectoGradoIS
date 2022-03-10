@@ -1,6 +1,5 @@
 package com.example.backendRegEv.resource;
 
-import com.example.backendRegEv.enumaration.Status;
 import com.example.backendRegEv.model.Response;
 import com.example.backendRegEv.model.Server;
 import com.example.backendRegEv.service.implementation.ServerServiceImpl;
@@ -12,6 +11,7 @@ import javax.validation.Valid;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.concurrent.TimeUnit;
 import java.time.LocalDateTime;
 import java.util.Map;
 
@@ -30,7 +30,8 @@ public class ServerResource {
 
 
     @GetMapping("/list")
-    public ResponseEntity<Response> getServers(){
+    public ResponseEntity<Response> getServers() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(3);
         return ResponseEntity.ok(
                 Response.builder()
                 .timeStamp(now())
@@ -49,7 +50,7 @@ public class ServerResource {
                 Response.builder()
                         .timeStamp(now())
                         .data(of("server", server))
-                        .message(server.getStatus() == SERVER_UP ? "Ping OK" : "Ping fallo")
+                        .message(server.getStatus() == SERVER_UP ? "Ping OK" : "Ping failed")
                         .status(OK)
                         .statusCode(OK.value())
                         .build()
@@ -75,7 +76,7 @@ public class ServerResource {
                 Response.builder()
                         .timeStamp(now())
                         .data(of("server", serverService.get(id)))
-                        .message("Server Retieved")
+                        .message("Server retrieved")
                         .status(OK)
                         .statusCode(OK.value())
                         .build()
@@ -88,7 +89,7 @@ public class ServerResource {
                 Response.builder()
                         .timeStamp(now())
                         .data(of("deleted", serverService.delete(id)))
-                        .message("Server Retieved")
+                        .message("Server deleted")
                         .status(OK)
                         .statusCode(OK.value())
                         .build()
