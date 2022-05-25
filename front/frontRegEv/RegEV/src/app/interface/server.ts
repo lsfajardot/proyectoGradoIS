@@ -8,4 +8,8 @@ export interface Server {
   type: string;
   imageUrl: string;
   status: Status;
+  latitud: number;
+  longitud: number;
+  tipo: string;
+  fecha: string;
 }

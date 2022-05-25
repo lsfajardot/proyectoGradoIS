@@ -11,12 +11,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
 
+import java.util.Date;
+
 import static javax.persistence.GenerationType.AUTO;
 
 /**
- * @author Get Arrays (https://www.getarrays.io/)
- * @version 1.0
- * @since 9/4/2021
+
  */
 
 @Entity
@@ -35,4 +35,8 @@ public class Server {
     private String type;
     private String imageUrl;
     private Status status;
+    private Double latitud;
+    private Double longitud;
+    private String tipo;
+    private String fecha;
 }

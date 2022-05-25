@@ -22,9 +22,7 @@ import static java.lang.Boolean.TRUE;
 import static org.springframework.data.domain.PageRequest.of;
 
 /**
- * @author Get Arrays (https://www.getarrays.io/)
- * @version 1.0
- * @since 9/4/2021
+
  */
 
 @RequiredArgsConstructor

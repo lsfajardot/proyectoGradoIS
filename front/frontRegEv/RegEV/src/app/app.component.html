@@ -5,24 +5,22 @@
           <div class="table-title">
               <div class="row">
                   <div class="col-sm-6">
-                      <h2>Manage Servers</h2>
+                      <h2>Eventos Criminales</h2>
                   </div>
                   <div class="col-sm-6">
-                      <button (click)="printReport()" type="button" class="btn btn-primary">Print Report</button>
-
-                      <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">
-                          <i class="material-icons">&#xE147;</i>
-                          <span>New Server</span>
-                      </a>
-
+                      <button (click)="printReport()" type="button" class="btn btn-primary">Descarga Eventos</button>
                       <span>
                           <select (ngModelChange)="filterServers($event)" name="status" ngModel="ALL"
                               class="btn btn-info" style="height: 32.91px;">
                               <option value="ALL">ALL</option>
-                              <option value="SERVER_UP">SERVER UP</option>
+                              <option value="SERVER_UP">CRIMEN ACTIVO</option>
                               <option value="SERVER_DOWN">SERVER DOWN</option>
                           </select>
                       </span>
+                      <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal">
+                        <i class="material-icons">&#xE147;</i>
+                        <span>Crear Registro</span>
+                    </a>
                   </div>
               </div>
           </div> <br>
@@ -44,6 +42,10 @@
                               <th>Status</th>
                               <th>Ping</th>
                               <th>Actions</th>
+                              <th>Latitud</th>
+                              <th>Longitud</th>
+                              <th>Tipo</th>
+                              <th>Fecha</th>
                           </tr>
                       </thead>
                       <tbody *ngFor="let server of appState.appData.data.servers; let i = index" >
@@ -72,6 +74,10 @@
                                       style="cursor: pointer;"><i class="material-icons" data-toggle="tooltip"
                                           title="Delete">&#xE872;</i></a>
                               </td>
+                              <td>{{ server.latitud }}</td>
+                              <td>{{ server.longitud }}</td>
+                              <td>{{ server.tipo }}</td>
+                              <td>{{ server.fecha }}</td>
                       </tbody>
                   </table>
               </ng-container>

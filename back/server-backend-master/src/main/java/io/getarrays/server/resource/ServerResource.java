@@ -21,9 +21,7 @@ import static org.springframework.http.HttpStatus.OK;
 import static org.springframework.http.MediaType.IMAGE_PNG_VALUE;
 
 /**
- * @author Get Arrays (https://www.getarrays.io/)
- * @version 1.0
- * @since 9/4/2021
+
  */
 
 @RestController
@@ -34,7 +32,7 @@ public class ServerResource {
 
     @GetMapping("/list")
     public ResponseEntity<Response> getServers() throws InterruptedException {
-        TimeUnit.SECONDS.sleep(3);
+        TimeUnit.SECONDS.sleep(1);
         return ResponseEntity.ok(
                 Response.builder()
                         .timeStamp(now())
