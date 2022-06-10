@@ -34,7 +34,7 @@ public class ServerServiceImpl implements ServerService {
 
     @Override
     public Server create(Server server) {
-        log.info("Saving new server: {}", server.getName());
+        log.info("Saving new server: {}", server.getIpAddress());
         server.setImageUrl(setServerImageUrl());
         return serverRepo.save(server);
     }
@@ -63,7 +63,7 @@ public class ServerServiceImpl implements ServerService {
 
     @Override
     public Server update(Server server) {
-        log.info("Updating server: {}", server.getName());
+        log.info("Updating server: {}", server.getIpAddress());
         return serverRepo.save(server);
     }
 

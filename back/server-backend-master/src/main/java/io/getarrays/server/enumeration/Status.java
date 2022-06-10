@@ -1,7 +1,7 @@
 package io.getarrays.server.enumeration;
 
 /**
- Aqui Se crean los estados de los servidores, despues se puede quitar debido a que mi desarrollo no tien esta seccion.
+ Aqui Se crean los estados de los servidores, despues se puede quitar debido a que mi desarrollo no tiene esta seccion.
  */
 public enum Status {
     SERVER_UP("SERVER_UP"),
