@@ -18,13 +18,7 @@ public class ServerApplication {
 		SpringApplication.run(ServerApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner run(ServerRepo serverRepo) {
-		return args -> {
-			serverRepo.save(new Server(null, "192.168.1.160", 1.65482, 1.23564, "Cosquilleo", "1", "Cosquilleo", SERVER_UP));
-			serverRepo.save(new Server(null, "192.168.1.58",0.65482, 4.23564, "Fleteo", "1", "Cosquilleo", SERVER_UP));
-		};
-	}
+
 
 	@Bean
 	public CorsFilter corsFilter() {

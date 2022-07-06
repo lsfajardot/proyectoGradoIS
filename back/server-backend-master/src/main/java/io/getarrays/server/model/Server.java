@@ -25,16 +25,10 @@ public class Server {
     @GeneratedValue(strategy = AUTO)
     private Long id;
     @Column(unique = true)
-    @NotEmpty(message = "IP Address cannot be empty or null")
-    private String ipAddress;
+    @NotEmpty(message = "Address cannot be empty or null")
+    private String direccion;
     private Double latitud;
     private Double longitud;
     private String tipo;
     private String fecha;
-    /**private String name;
-    private String memory;
-    private String type; */
-    private String imageUrl;
-    private Status status;
-
 }

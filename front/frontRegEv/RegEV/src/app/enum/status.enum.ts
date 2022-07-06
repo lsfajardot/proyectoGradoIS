@@ -1,3 +1,3 @@
-export enum Status {
-  ALL = 'ALL', SERVER_UP = 'SERVER_UP', SERVER_DOWN = 'SERVER_DOWN'
+export enum Type {
+  ALL = 'ALL', COSQUILLEO = 'COSQUILLEO', FLETEO = 'FLETEO'
 }

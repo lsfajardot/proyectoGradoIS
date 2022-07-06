@@ -9,5 +9,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @since 9/4/2021
  */
 public interface ServerRepo extends JpaRepository<Server, Long> {
-    Server findByIpAddress(String ipAddress);
+    //Server findByIpAddress(String ipAddress);
 }

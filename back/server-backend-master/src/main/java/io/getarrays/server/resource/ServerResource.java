@@ -44,7 +44,7 @@ public class ServerResource {
         );
     }
 
-    @GetMapping("/ping/{ipAddress}")
+    /*@GetMapping("/ping/{ipAddress}")
     public ResponseEntity<Response> pingServer(@PathVariable("ipAddress") String ipAddress) throws IOException {
         Server server = serverService.ping(ipAddress);
         return ResponseEntity.ok(
@@ -56,7 +56,7 @@ public class ServerResource {
                         .statusCode(OK.value())
                         .build()
         );
-    }
+    }*/
 
     @PostMapping("/save")
     public ResponseEntity<Response> saveServer(@RequestBody @Valid Server server) {

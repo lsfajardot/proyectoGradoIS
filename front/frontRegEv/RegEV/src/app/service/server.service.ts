@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
-import { Status } from '../enum/status.enum';
+import { Type } from '../enum/status.enum';
 import { CustomResponse } from '../interface/custom-response';
 import { Server } from '../interface/server';
 
@@ -19,13 +19,17 @@ export class ServerService {
         catchError(this.handleError)
       );
 
-  save$ = (server: Server) => <Observable<CustomResponse>>
-    this.http.post<CustomResponse>(`${this.apiUrl}/server/save`, server)
+  save$ = (server: Server) =>
+     {  console.log('save')
+
+    console.log(server)
+     console.log(`${this.apiUrl}/server/save`)
+    return this.http.post<CustomResponse>(`${this.apiUrl}/server/save`, server)
       .pipe(
         tap(console.log),
         catchError(this.handleError)
       );
-
+    }
   ping$ = (ipAddress: string) => <Observable<CustomResponse>>
     this.http.get<CustomResponse>(`${this.apiUrl}/server/ping/${ipAddress}`)
       .pipe(
@@ -33,21 +37,21 @@ export class ServerService {
         catchError(this.handleError)
       );
 
-  filter$ = (status: Status, response: CustomResponse) => <Observable<CustomResponse>>
+  filter$ = (type: Type, response: CustomResponse) => <Observable<CustomResponse>>
     new Observable<CustomResponse>(
       suscriber => {
         console.log(response);
         suscriber.next(
-          status === Status.ALL ? { ...response, message: `Servers filtered by ${status} status` } :
+          type === Type.ALL ? { ...response, message: `Servers filtered by ${type} status` } :
             {
               ...response,
               message: response.data.servers
-                .filter(server => server.status === status).length > 0 ? `Servers filtered by
-          ${status === Status.SERVER_UP ? 'SERVER UP'
-                : 'SERVER DOWN'} status` : `No servers of ${status} found`,
+                .filter(server => server.tipo === type).length > 0 ? `Servers filtered by
+          ${type === Type.COSQUILLEO ? 'SERVER UP'
+                : 'SERVER DOWN'} status` : `No servers of ${type} found`,
               data: {
                 servers: response.data.servers
-                  .filter(server => server.status === status)
+                  .filter(server => server.tipo === type)
               }
             }
         );

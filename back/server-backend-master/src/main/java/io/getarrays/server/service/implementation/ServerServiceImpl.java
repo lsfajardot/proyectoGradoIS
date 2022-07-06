@@ -34,12 +34,11 @@ public class ServerServiceImpl implements ServerService {
 
     @Override
     public Server create(Server server) {
-        log.info("Saving new server: {}", server.getIpAddress());
-        server.setImageUrl(setServerImageUrl());
+        log.info("Saving new server: {}", server.getDireccion());
         return serverRepo.save(server);
     }
 
-    @Override
+    /*@Override
     public Server ping(String ipAddress) throws IOException {
         log.info("Pinging server IP: {}", ipAddress);
         Server server = serverRepo.findByIpAddress(ipAddress);
@@ -47,7 +46,7 @@ public class ServerServiceImpl implements ServerService {
         server.setStatus(address.isReachable(10000) ? SERVER_UP : SERVER_DOWN);
         serverRepo.save(server);
         return server;
-    }
+    }*/
 
     @Override
     public Collection<Server> list(int limit) {
@@ -63,7 +62,7 @@ public class ServerServiceImpl implements ServerService {
 
     @Override
     public Server update(Server server) {
-        log.info("Updating server: {}", server.getIpAddress());
+        log.info("Updating server: {}", server.getDireccion());
         return serverRepo.save(server);
     }
 
