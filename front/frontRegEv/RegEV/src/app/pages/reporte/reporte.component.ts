@@ -28,9 +28,22 @@ export class ReporteComponent implements OnInit {
   constructor(private serverService: ServerService, private notifier: NotificationService) {}
 
   ngOnInit(): void {
+    this.appState$ = this.serverService.servers$
+    .pipe(
+      map(response => {
+        this.notifier.onDefault(response.message);
+        this.dataSubject.next(response);
+        return { dataState: DataState.LOADED_STATE, appData: { ...response, data: { servers: response.data.servers.reverse() } } }
+      }),
+      startWith({ dataState: DataState.LOADING_STATE }),
+      catchError((error: string) => {
+        this.notifier.onError(error);
+        return of({ dataState: DataState.ERROR_STATE, error });
+      })
+    );
   }
 
-  pingServer(ipAddress: string): void {
+  /* pingServer(ipAddress: string): void {
     this.filterSubject.next(ipAddress);
     this.appState$ = this.serverService.ping$(ipAddress)
     .pipe(
@@ -48,9 +61,9 @@ export class ReporteComponent implements OnInit {
         return of({ dataState: DataState.ERROR_STATE, error: error });
       })
     );
-  }
+  } */
 
-  saveServer(serverForm: NgForm): void {
+  /* saveServer(serverForm: NgForm): void {
     this.isLoading.next(true);
     this.appState$ = this.serverService.save$(serverForm.value as Server)
     .pipe(
@@ -71,7 +84,7 @@ export class ReporteComponent implements OnInit {
         return of({ dataState: DataState.ERROR_STATE, error: error });
       })
     );
-  }
+  } */
 
   filterServers(status: Type): void {
     this.appState$ = this.serverService.filter$(status, this.dataSubject.value)
@@ -88,7 +101,7 @@ export class ReporteComponent implements OnInit {
       );
   }
 
-  deleteServer(server: Server): void {
+  /* deleteServer(server: Server): void {
     this.appState$ = this.serverService.delete$(server.id)
     .pipe(
       map((response) => {
@@ -105,7 +118,7 @@ export class ReporteComponent implements OnInit {
         return of({ dataState: DataState.ERROR_STATE, error: error });
       })
     );
-  }
+  } */
 
   printReport(): void {
     this.notifier.onDefault('Report Downloaded');
@@ -116,7 +129,7 @@ export class ReporteComponent implements OnInit {
     let downloadLink = document.createElement('a');
     document.body.appendChild(downloadLink);
     downloadLink.href = 'data:' + dataType + ', ' + tableHtml;
-    downloadLink.download = 'server-report.xls';
+    downloadLink.download = 'reporte_eventos.xls';
     downloadLink.click();
     document.body.removeChild(downloadLink);
   }
