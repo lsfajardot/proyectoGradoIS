@@ -4,7 +4,7 @@
 @import '~angular-notifier/styles';
 
 body{
-    background: #edf1f5;
+    background: #b4b4b4;
     margin-top:20px;
 }
 .card {
@@ -71,7 +71,7 @@ body{
 
  .note-has-grid .single-note-item .category .category-social {
      background-color: rgba(44, 171, 227, .5);
-     border: 2px solid #2cabe3
+     border: 2px solid #000000
  }
 
  .note-has-grid .single-note-item .category .category-important {
