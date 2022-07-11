@@ -1,28 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Yanone+Kaffeesatz:wght@300&display=swap');
-* {
-    box-sizing: border-box;
-}
+
 body {
     font-family: 'Open Sans', sans-serif;
-    margin: 0;
-}
-#map {
-  height: 100%;
-}
-#myMap {
-   height: 550px;
-   width: 680px;
+    /* margin: auto; */
 }
 /*Estilos base*/
-img{
-    display: block;
+/* img{
+    display:block;
     width: 100%;
-    max-width: 100%
+    max-width: 100%;
+    height: 30%;
 }
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
     font-family: 'Yanone Kaffeesatz', sans-serif;
-    letter-spacing: 1.5px;
+    letter-spacing: 0.5px;
 }
 .container {
     width: 100%;
@@ -36,9 +27,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .column {
     width: 100;
-}
+} */
 /*-----Estilos del Header------*/
-.main-header{
+/* .main-header{
     width: 100;
 }
 .logo {
@@ -62,9 +53,9 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     top: 2px;
     right: 5px;
-}
+} */
 /*-----Estilos del Menu------*/
-.main_nav {
+/* .main_nav {
     width: 100%;
     position: relative;
     z-index: 2000;
@@ -75,6 +66,7 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     color: white;
     border: 1px solid red;
+    background-color: #DE423A;
     border-radius: 3px;
     width: 40px;
     height: 40px;
@@ -132,46 +124,48 @@ h1, h2, h3, h4, h5, h6 {
 }
 .mostrar {
     height: 196px;
-}
+} */
 
 /*-----Estilos del Banner------*/
 .banner {
-    margin-top: -30px;
-    position: relative;
+  width: 100%;
+  height: 300px;
+  margin-top: 0px;
+  position: relative;
 }
 .banner:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
-    z-index: 1000;
-    top: 0;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  background: rgba(0,0,0,0.7);
+  z-index: 0;
+  top: 0;
 }
 .banner__img {
-    width: 100%;
-    height: 1px;
-    object-fit: cover;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 .banner__content {
-    width: 100%;
-    color: white;
-    text-align: center;
-    position: absolute;
-    z-index: 1000;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    font-size: 1.5em;
-    font-weight: bold;
+  width: 100%;
+  height: 50%;
+  color: white;
+  text-align: center;
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 2.5em;
+  font-weight: bold;
+  padding: 0px;
 }
-
 /*------Estilos Principales----*/
-
 .group--color .container{
     background: #DE423A;
     color: white;
-    padding: 10px;
+    padding: 18px;
     text-align: center;
 }
 .main__title {
@@ -227,7 +221,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*------Estilos del Footer----*/
-.main-footer {
+/* .main-footer {
     background: #222;
     color: white;
     padding: 10px;
@@ -250,8 +244,9 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     top: 3px;
     right: 5px;
-}
-/*------Estilos Responsive----*/
+} */
+
+/*------Estilos Responsive----*//*
 @media screen and (min-width:480px){
     .logo {
         color: white;
@@ -412,30 +407,4 @@ h1, h2, h3, h4, h5, h6 {
     .today-special__img{
         height: 100px;
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+} */

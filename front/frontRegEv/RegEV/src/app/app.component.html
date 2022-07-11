@@ -1,15 +1,30 @@
 <!-- <div>{{ appState$ | async | json }}</div> -->
-
-<h2>Herramienta de Registro de Eventos Criminales</h2>
+<nav class="main-nav">
+  <div class="container container--flex">
+     <span class="icon-btnmenu" id="menu"></span>
+      <ul class="menu" id="menu">
+          <li class="menu__item"><a routerLink="/" routerLinkActive="active" class="menu__link" ariaCurrentWhenActive="page">Inicio</a></li>
+          <li class="menu__item"><a routerLink="/registro" routerLinkActive="active" class="menu__link" ariaCurrentWhenActive="page">Registro de Eventos</a></li>
+          <li class="menu__item"><a routerLink="/reporte" routerLinkActive="active" class="menu__link" ariaCurrentWhenActive="page">Reporte</a></li>
+          <li class="menu__item"><a href="/#footer" routerLinkActive="active" class="menu__link" ariaCurrentWhenActive="page">Contacto</a></li>
+      </ul>
+      <div class="social-icon">
+          <a href="" class="social-icon__link"><span class="icon-facebook"></span></a>
+          <a href="" class="social-icon__link"><span class="icon-twitter"></span></a>
+          <a href="" class="social-icon__link"><span class="icon-mail"></span></a>
+      </div>
+  </div>
+</nav>
+<!-- <h2>Herramienta de Registro de Eventos Criminales</h2>
+<span style="font-size:35px;cursor:pointer" (click)="openNav()">&#9776; </span>
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
-  <a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Inicio</a>
-  <a routerLink="/registro" routerLinkActive="active" ariaCurrentWhenActive="page">Registro de Eventos</a>
-  <a routerLink="/reporte" routerLinkActive="active" ariaCurrentWhenActive="page">Reporte</a>
+  <a routerLink="/" routerLinkActive="active" class="menu__link" ariaCurrentWhenActive="page">Inicio</a>
+  <a routerLink="/registro" routerLinkActive="active" class="menu__link" ariaCurrentWhenActive="page">Registro de Eventos</a>
+  <a routerLink="/reporte" routerLinkActive="active" class="menu__link" ariaCurrentWhenActive="page">Reporte</a>
   <a href="/#footer">Contacto</a>
-</div>
+</div> -->
 
-<span style="font-size:35px;cursor:pointer" (click)="openNav()">&#9776; </span>
 
 
 
@@ -18,7 +33,7 @@
 
 </router-outlet>
 
-<div id="footer">
+<!-- <div id="footer">
   <h1>Contacto</h1>
   <div class="container container--flex">
     <div class="column column--33"><h2 class="column__title">Porque</h2>
@@ -38,4 +53,22 @@
     </div>
     <p class="copy">Todos los derechos reservados</p>
 </div>
-</div>
+</div> -->
+
+<footer id="footer" class="main-footer">
+    <div class="container container--flex">
+        <div class="column column--33"><h2 class="column__title">Porque</h2>
+        <p class="column__txt">a</p>
+        <p class="column__txt">b</p>
+        </div>
+        <div class="column column--33"><h2 class="column__title">De que</h2>
+        <p class="column__txt"><a href="" class="icon-facebook">Facebook</a></p>
+        <p class="column__txt">e</p>
+        </div>
+        <div class="column column--33"><h2 class="column__title">O que</h2>
+        <p class="column__txt"><a href="" class="icon-facebook">Facebook</a></p>
+        <p class="column__txt"><a href="" class="icon-mail">lsfajardot@correo.udistriral.edu.co</a></p>
+        </div>
+        <p class="copy">Todos los derechos reservados</p>
+    </div>
+</footer>
